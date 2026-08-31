@@ -1,8 +1,9 @@
+import { useState } from "react"
 import LeftPanel from "./LeftPanel"
 import MainContent from "./MainContent"
 import RightPanel from "./RightPanel"
 
-const DashboardLayout = ({onLogout}) => {
+const DashboardLayout = ({ onLogout }) => {
     const [activeTab, setactiveTab] = useState("Dashboard")
 
     return (
@@ -10,7 +11,7 @@ const DashboardLayout = ({onLogout}) => {
             <div className="w-64 bg-zinc-50 p-6 shadow-md hidden lg:block">
                 <LeftPanel />
             </div>
-{/* MAIN CONTENT (DYNAMIC AREA) */}
+            {/* MAIN CONTENT (DYNAMIC AREA) */}
             <div className="flex-1 p-2 container md:p-6 lg:p-10 max-w-5xl md:mx-auto">
                 {activeTab === "Dashboard" && <MainContent />}
                 {/* OTHERS TABS ADD HERE */}
