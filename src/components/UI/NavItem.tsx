@@ -9,9 +9,17 @@ const NavItem = ({
     const finaleTabName = tabName === "Help & Support" ? "Help & Support" : label
 
     return (
-        <a onClick={() => onTabClick(finaleTabName)} className={`{baseClasses}${isActive ? activeClasses : inactiveClasses}`}></a>
+        <a onClick={() => onTabClick(finaleTabName)} className={`${baseClasses}${isActive ? activeClasses : inactiveClasses}`}>
+            <Icon size={20} className={isActive ? "text-white" : "text-zinc-500 group-hover:text-zinc-700"} />
 
-        <Icon />
+            <span className="flex-1 text-sm font-medium ">{label}</span>
+            {notifications &&
+                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${isActive ? "bg-orange-400 text-zinc-900" : "bg-orange-500 text-white"}`}>
+                    {notifications}
+                </span>
+            }
+        </a>
+
     )
 }
 
