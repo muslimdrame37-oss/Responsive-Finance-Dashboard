@@ -7,7 +7,7 @@ const DashboardLayout = ({ onLogout }) => {
     const [activeTab, setactiveTab] = useState("Dashboard")
 
     return (
-        <div className="flex min-h-screen">
+        <div className="flex h-screen">
             <div className="w-64 bg-zinc-50 p-6 shadow-md hidden lg:block">
                 <SideBar onLogout={onLogout} />
             </div>

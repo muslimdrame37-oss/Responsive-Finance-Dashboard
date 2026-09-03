@@ -9,23 +9,21 @@ const SideBar = ({ activeTab, setActiveTab, onLogout }) => {
     }
 
     return (
-        <div className="flex flex-col h-full ">
+        <div className="flex flex-col h-full">
             {/* Logo */}
 
             <div className="flex items-center space-x-2 mb-8">
-                <div className="bg-zinc-200 rounded-lg p-2">
-                    <DollarSign size={24} className="text-zinc-700" />
-                    <span className="text-xl tracking-tight font-bold text-zinc-900">
-                        FinanceDash
-                    </span>
-                </div>
+                <DollarSign size={24} className="text-zinc-700" />
+                <span className="text-xl tracking-tight font-bold text-zinc-900">
+                    FinanceDash
+                </span>
             </div>
 
             {/* Navigation */}
             <nav className="flex-1 space-y-2">
                 {
                     tabs.map((tab) => (
-                        <NavItem key={tab.key} activeTab={activeTab} onTabClick={handleClick} {...tab} />
+                        <NavItem key={tab} activeTab={activeTab} onTabClick={handleClick} {...tab} />
                     ))
                 }
             </nav>
